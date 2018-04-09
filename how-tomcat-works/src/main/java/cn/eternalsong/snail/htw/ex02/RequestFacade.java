@@ -1,0 +1,144 @@
+package cn.eternalsong.snail.htw.ex02;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletInputStream;
+import javax.servlet.ServletRequest;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.Enumeration;
+import java.util.Locale;
+import java.util.Map;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: 长歌
+ * Date: 2018/4/2
+ * Time: 9:05
+ * Description: Facade封装类 for Request
+ */
+public class RequestFacade implements ServletRequest{
+
+    private Request request;
+
+    public RequestFacade(Request request) {
+        this.request = request;
+    }
+    /*implements method for ServletRequest*/
+    public Object getAttribute(String attribute) {
+        return request.getAttribute(attribute);
+    }
+
+    public Enumeration getAttributeNames() {
+        return request.getAttributeNames();
+    }
+
+    public String getRealPath(String path) {
+        return request.getRealPath(path);
+    }
+
+    public RequestDispatcher getRequestDispatcher(String path) {
+        return request.getRequestDispatcher(path);
+    }
+
+    public boolean isSecure() {
+        return request.isSecure();
+    }
+
+    public String getCharacterEncoding() {
+        return request.getCharacterEncoding();
+    }
+
+    public int getContentLength() {
+        return request.getContentLength();
+    }
+
+    public String getContentType() {
+        return request.getContentType();
+    }
+
+    public ServletInputStream getInputStream() throws IOException {
+        return request.getInputStream();
+    }
+
+    public Locale getLocale() {
+        return request.getLocale();
+    }
+
+    public Enumeration getLocales() {
+        return request.getLocales();
+    }
+
+    public String getParameter(String name) {
+        return request.getParameter(name);
+    }
+
+    public Map getParameterMap() {
+        return request.getParameterMap();
+    }
+
+    public Enumeration getParameterNames() {
+        return request.getParameterNames();
+    }
+
+    public String[] getParameterValues(String parameter) {
+        return request.getParameterValues(parameter);
+    }
+
+    public String getProtocol() {
+        return request.getProtocol();
+    }
+
+    public BufferedReader getReader() throws IOException {
+        return request.getReader();
+    }
+
+    public String getRemoteAddr() {
+        return request.getRemoteAddr();
+    }
+
+    public String getRemoteHost() {
+        return request.getRemoteHost();
+    }
+
+    public String getScheme() {
+        return request.getScheme();
+    }
+
+    public String getServerName() {
+        return request.getServerName();
+    }
+
+    public int getServerPort() {
+        return request.getServerPort();
+    }
+
+    public void removeAttribute(String attribute) {
+        request.removeAttribute(attribute);
+    }
+
+    public void setAttribute(String key, Object value) {
+        request.setAttribute(key, value);
+    }
+
+    public void setCharacterEncoding(String encoding)
+            throws UnsupportedEncodingException {
+        request.setCharacterEncoding(encoding);
+    }
+
+    public int getRemotePort() {
+        return 0;
+    }
+
+    public String getLocalName() {
+        return null;
+    }
+
+    public String getLocalAddr() {
+        return null;
+    }
+
+    public int getLocalPort() {
+        return 0;
+    }
+}
