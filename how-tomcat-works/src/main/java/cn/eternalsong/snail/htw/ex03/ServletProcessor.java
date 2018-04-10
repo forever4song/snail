@@ -37,7 +37,7 @@ public class ServletProcessor {
         }
         Class myClass = null;
         try {
-            myClass = loader.loadClass(servletName);
+            myClass = loader.loadClass("cn.eternalsong.snail.htw.ex03.servlet."+servletName);
         }
         catch (ClassNotFoundException e) {
             System.out.println(e.toString());

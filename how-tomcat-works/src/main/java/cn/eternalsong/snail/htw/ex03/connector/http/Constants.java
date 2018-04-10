@@ -10,8 +10,22 @@ import java.io.File;
  * Description: 常量类
  */
 public class Constants {
-    public static final String WEB_ROOT =
-            System.getProperty("user.dir") + File.separator  + "webroot";
+    /**
+     * WEB_ROOT 静态资源根路径
+     */
+    public static final String WEB_ROOT = System.getProperty("user.dir") +
+            File.separator + "how-tomcat-works" +
+            File.separator + "src" +
+            File.separator + "main" +
+            File.separator + "resources";
+    /**
+     * CLASS_ROOT 二进制文件路径
+     */
+    public static final String CLASS_ROOT = System.getProperty("user.dir") +
+            File.separator + "how-tomcat-works" +
+            File.separator + "target" +
+            File.separator + "classes";
+
     public static final String Package = "cn.eternalsong.snail.htw.ex03.connector.http";
     public static final int DEFAULT_CONNECTION_TIMEOUT = 60000;
     public static final int PROCESSOR_IDLE = 0;
