@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/design-pattern/design-pattern.iml" filepath="$PROJECT_DIR$/design-pattern/design-pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/how-tomcat-works/how-tomcat-works.iml" filepath="$PROJECT_DIR$/how-tomcat-works/how-tomcat-works.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smart-framework/smart-framework.iml" filepath="$PROJECT_DIR$/smart-framework/smart-framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/snail.iml" filepath="$PROJECT_DIR$/snail.iml" />
     </modules>
   </component>

@@ -8,12 +8,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="design-pattern" />
         <module name="how-tomcat-works" />
+        <module name="smart-framework" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="design-pattern" target="1.5" />
       <module name="how-tomcat-works" target="1.5" />
+      <module name="smart-framework" target="1.5" />
       <module name="snail" target="1.5" />
+      <module name="source-code" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -10,7 +10,6 @@
     <modules>
         <module>how-tomcat-works</module>
         <module>design-pattern</module>
-        <module>source-code</module>
         <module>smart-framework</module>
     </modules>
     <packaging>pom</packaging>
