@@ -1,5 +1,10 @@
 package cn.foreversong.snail.sf.annotation;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 /**
  * Created with IntelliJ IDEA.
  * User: 长歌
@@ -7,5 +12,7 @@ package cn.foreversong.snail.sf.annotation;
  * Time: 上午9:03
  * Description: 依赖注入注解
  */
-public class Inject {
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Inject {
 }
