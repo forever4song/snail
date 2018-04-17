@@ -99,10 +99,9 @@ public final class ClassUtil {
      * @param packageName 文件或文件夹名称
      */
     private static void addClass(Set<Class<?>> classSet, String packagePath, String packageName) {
-        File[] files = new File(packagePath).listFiles(new FileFilter() {
-            public boolean accept(File file) {
-                return (file.isFile() && file.getName().endsWith(".class") || file.isDirectory());
-            }
+
+        File[] files = new File(packagePath).listFiles((File file) -> {
+           return  (file.isFile() && file.getName().endsWith(".class") || file.isDirectory());
         });
         for (File file : files) {
             String fileName = file.getName();
