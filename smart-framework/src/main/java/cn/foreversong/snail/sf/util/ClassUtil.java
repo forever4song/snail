@@ -92,6 +92,12 @@ public final class ClassUtil {
         return classSet;
     }
 
+    /**
+     * 加载类
+     * @param classSet 集合对象
+     * @param packagePath 包路径
+     * @param packageName 文件或文件夹名称
+     */
     private static void addClass(Set<Class<?>> classSet, String packagePath, String packageName) {
         File[] files = new File(packagePath).listFiles(new FileFilter() {
             public boolean accept(File file) {
