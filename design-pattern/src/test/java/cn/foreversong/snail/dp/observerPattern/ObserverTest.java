@@ -1,0 +1,23 @@
+package cn.foreversong.snail.dp.observerPattern;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: 长歌
+ * Date: 18-3-31
+ * Time: 下午4:55
+ * Description: 观察者模式测试类
+ */
+public class ObserverTest {
+    public static void main(String[] args) {
+        Subject subject = new Subject();
+
+        new HexaObserver(subject);
+        new OctalObserver(subject);
+        new BinaryObserver(subject);
+
+        System.out.println("First state change: 15");
+        subject.setState(15);
+        System.out.println("Second state change: 10");
+        subject.setState(10);
+    }
+}
