@@ -34,9 +34,9 @@ public final class ClassUtil {
     /**
      * 加载类
      *
-     * @param className
-     * @param isInitialized
-     * @return
+     * @param className 类
+     * @param isInitialized 初始化标志
+     * @return 类对象
      */
     public static Class<?> loadClass(String className, boolean isInitialized) {
         Class<?> cls;
@@ -103,6 +103,8 @@ public final class ClassUtil {
         File[] files = new File(packagePath).listFiles((File file) -> {
            return  (file.isFile() && file.getName().endsWith(".class") || file.isDirectory());
         });
+        if(ArrayUtil.isEmpty(files))    // 增加判空避免空指针
+            return ;
         for (File file : files) {
             String fileName = file.getName();
             // 如果是文件,直接加载类
