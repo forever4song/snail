@@ -92,9 +92,6 @@ public class DispatcherServlet extends HttpServlet {
                         resp.sendRedirect(req.getContextPath() + path);
                     }else {
                         Map<String , Object> model = view.getModel();
-//                        model.forEach((Map.Entry<String,Object> entry)->{
-//                            req.setAttribute(entry.getKey(),entry.getValue());
-//                        });
                         model.entrySet().forEach((entry -> {
                             req.setAttribute(entry.getKey(),entry.getValue());
                         }));
