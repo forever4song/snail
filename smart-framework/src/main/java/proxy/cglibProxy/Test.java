@@ -11,7 +11,10 @@ import proxy.ForeverSong;
  */
 public class Test {
     public static void main(String[] args){
-        ForeverSong foreverSong = CGLibProxy.getInstance().getProxy(ForeverSong.class);
-        foreverSong.sing("一首歌");
+//        ForeverSong foreverSong = CGLibProxy.getInstance().getProxy(ForeverSong.class);
+//        foreverSong.sing("一首歌");
+
+        BusiSrv busiSrv = CGLibProxy.getInstance().getProxy(BusiSrv.class);
+        busiSrv.service();
     }
 }
