@@ -17,11 +17,20 @@ public class DynamicProxy implements InvocationHandler {
 
     private Object target;
 
+    /**
+     * 构造函数
+     * @param target 被代理的类
+     */
     public DynamicProxy(Object target) {
         this.target = target;
     }
 
 
+    /**
+     * 获取代理对象
+     * @param <T> 代理对象类型
+     * @return 代理对象
+     */
     @SuppressWarnings("unchecked")
     public <T> T getProxy(){
         return (T) Proxy.newProxyInstance(
@@ -31,6 +40,9 @@ public class DynamicProxy implements InvocationHandler {
         );
     }
 
+    /**
+     * 执行方法
+     */
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         before();
         Object result = method.invoke(target, args);
@@ -39,10 +51,10 @@ public class DynamicProxy implements InvocationHandler {
     }
 
     private void before() {
-        System.out.println("start time : " + new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
+        System.out.println(Thread.currentThread().getName() +" exec : 开始时间"+ new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
     }
 
     private void after() {
-        System.out.println("end   time : " + new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
+        System.out.println(Thread.currentThread().getName() +" exec : 结束时间"+ new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
     }
 }

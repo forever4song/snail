@@ -79,16 +79,15 @@ public class CGLibProxy implements MethodInterceptor {
     }
 
     private void before() {
-        System.out.println("start time : " + new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
+        System.out.println(Thread.currentThread().getName() +" exec : 开始时间"+ new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
     }
-
     private void after() {
-        System.out.println("end   time : " + new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
+        System.out.println(Thread.currentThread().getName() +" exec : 结束时间"+ new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
     }
     private void exception() {
-        System.out.println("method invoke exception");
+        System.out.println(Thread.currentThread().getName() +" exec : 抛出异常"+ new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
     }
     private void beforeReturning() {
-        System.out.println("before returning");
+        System.out.println("这里可以增加一些最终检查，写入日志等");
     }
 }

@@ -1,6 +1,5 @@
 package proxy.cglibProxy;
 
-import proxy.ForeverSong;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,7 +9,13 @@ import proxy.ForeverSong;
  * Description: 测试类
  */
 public class Test {
-    public static void main(String[] args){
+    /*
+    1、CGLib代理创建代理的速度较慢，但是创建之后运行的速度非常快
+    2、JDK动态代理正好相反
+    故：
+        系统初始化时可以使用CGLib去创建代理，并将其放入IOC容器中供以后使用。
+     */
+    public static void main(String[] args) throws InterruptedException {
 //        ForeverSong foreverSong = CGLibProxy.getInstance().getProxy(ForeverSong.class);
 //        foreverSong.sing("一首歌");
 

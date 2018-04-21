@@ -8,7 +8,8 @@ package proxy.cglibProxy;
  * Description: 被代理类
  */
 public class BusiSrv {
-    public void service(){
+    public void service() throws InterruptedException {
         System.out.println("执行业务处理");
+        Thread.sleep(1000);
     }
 }
