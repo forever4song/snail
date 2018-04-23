@@ -31,14 +31,12 @@ public class ForeverSongProxy implements Sing, Dance {
         System.out.println(String.format("After : " + new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date())));
     }
 
-    @Override
     public void dance(String name) {
         before();
         foreverSong.dance(name);
         after();
     }
 
-    @Override
     public void sing(String name) {
     before();
     foreverSong.sing(name);

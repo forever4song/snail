@@ -27,9 +27,7 @@ public class CGLibProxy implements MethodInterceptor {
         </dependency>
     */
     private volatile static CGLibProxy instance;
-    private Object obj;
-
-    private CGLibProxy(){}
+    private CGLibProxy(){}  // 私有化构造函数，避免被new 实例化，破坏单例设计模式
 
     /**
      * 单例模式获取对象
@@ -51,12 +49,12 @@ public class CGLibProxy implements MethodInterceptor {
      * @param <T> 代理类类型
      * @return 代理类
      */
-      public <T> T getProxy(Class<?> clazz){
+    public <T> T getProxy(Class<?> clazz) {
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(clazz);// 设置代理目标
         enhancer.setCallback(this);// 设置回调
         enhancer.setClassLoader(clazz.getClass().getClassLoader());
-        return (T)enhancer.create();
+        return (T) enhancer.create();
     }
 
     /**
