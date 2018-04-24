@@ -1,9 +1,6 @@
 package cn.foreversong.snail.sf;
 
-import cn.foreversong.snail.sf.helper.BeanHelper;
-import cn.foreversong.snail.sf.helper.ClassHelper;
-import cn.foreversong.snail.sf.helper.ControllerHelper;
-import cn.foreversong.snail.sf.helper.IocHelper;
+import cn.foreversong.snail.sf.helper.*;
 import cn.foreversong.snail.sf.util.ClassUtil;
 
 /**
@@ -21,8 +18,9 @@ public final class BootStrap {
         Class<?>[] classList = {
                 ClassHelper.class,
                 BeanHelper.class,
+                AopHelper.class,
                 IocHelper.class,
-                ControllerHelper.class
+                ControllerHelper.class,
         };
         for (Class<?> cls : classList) {
             ClassUtil.loadClass(cls.getName(), true);
