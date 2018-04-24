@@ -23,7 +23,7 @@ public class ProxyChain {
     private List<Proxy> proxyList;
     private int proxyIndex = 0;
 
-    public ProxyChain(Class<?> targetClass, Object targetObject, Method targetMethod, MethodProxy methodProxy, Object[] methodParams, List<Proxy> proxyList) {
+    ProxyChain(Class<?> targetClass, Object targetObject, Method targetMethod, MethodProxy methodProxy, Object[] methodParams, List<Proxy> proxyList) {
         this.targetClass = targetClass;
         this.targetObject = targetObject;
         this.targetMethod = targetMethod;
@@ -47,6 +47,12 @@ public class ProxyChain {
     public Object[] getMethodParams() {
         return methodParams;
     }
+
+    /**
+     *  执行代理链
+     * @return 执行结果
+     * @throws Throwable 异常
+     */
     public Object doProxyChain() throws Throwable{
         Object methodResult;
         if(proxyIndex < proxyList.size()){
