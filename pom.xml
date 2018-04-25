@@ -11,6 +11,7 @@
         <module>how-tomcat-works</module>
         <module>design-pattern</module>
         <module>smart-framework</module>
+        <module>extra</module>
     </modules>
     <packaging>pom</packaging>
 
