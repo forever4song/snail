@@ -43,7 +43,7 @@ public final class AopHelper {
      * @throws Exception 异常
      */
     private static Map<Class<?>, Set<Class<?>>> createProxyMap() throws Exception {
-        Map<Class<?>, Set<Class<?>>> proxyMap = new HashMap<>();
+        Map<Class<?>, Set<Class<?>>> proxyMap = new HashMap<Class<?>, Set<Class<?>>>();
         Set<Class<?>> proxyClassSet = ClassHelper.getClassSetBySupper(AspectProxy.class);
         for (Class<?> proxyClass : proxyClassSet) {
             if (proxyClass.isAnnotationPresent(Aspect.class)) {

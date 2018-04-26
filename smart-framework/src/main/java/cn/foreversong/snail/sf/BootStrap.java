@@ -21,6 +21,7 @@ public final class BootStrap {
                 AopHelper.class,
                 IocHelper.class,
                 ControllerHelper.class,
+                ConfigHelper.class
         };
         for (Class<?> cls : classList) {
             ClassUtil.loadClass(cls.getName(), true);
