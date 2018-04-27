@@ -1,8 +1,70 @@
 ## JPA Settings
 spring:
+########## JPA 配置 ###########
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate.ddl-auto: validate
+    properties.hibernate.format_sql: true
+########## 数据源 配置 ###########
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: root
+    name: ds
+########## Redis 配置 ###########
+  redis:
+    #数据库索引
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8 #最大连接数
+        max-idle: 500 #最大空闲
+        min-idle: 50 #最小空闲
+        max-wait: 2000ms #最大阻塞等待时间(负数表示没限制)
+    timeout: 10000ms #连接超时时间
+########## 邮件配置 ###########
+  mail:
+     host: smtp.qq.com
+     username: 846686700@qq.com
+     password: qmcaeypiyxtlbeed
+     default-encoding: utf-8
+     port: 587
+########## thymeleaf模板引擎配置 ###########
+  thymeleaf:
+     cache: false
+########## Quartz 定时任务配置 ###########
+  quartz:
+      #相关属性配置
+      properties:
+        org:
+          quartz:
+            scheduler:
+              instanceName: clusteredScheduler
+              instanceId: AUTO
+            jobStore:
+              class: org.quartz.impl.jdbcjobstore.JobStoreTX
+              driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+              tablePrefix: QRTZ_
+              isClustered: true
+              clusterCheckinInterval: 10000
+              useProperties: false
+            threadPool:
+              class: org.quartz.simpl.SimpleThreadPool
+              threadCount: 10
+              threadPriority: 5
+              threadsInheritContextClassLoaderOfInitializingThread: true
+      #数据库方式
+      job-store-type: jdbc
+      #初始化表结构
+      #jdbc:
+        #initialize-schema: never
+logging:
+  level:
+    root: info
+  file: myapp.log
+
 
