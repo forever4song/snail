@@ -11,6 +11,7 @@
         <module name="extra" />
         <module name="how-tomcat-works" />
         <module name="smart-framework" />
+        <module name="springboot" />
         <module name="test" />
       </profile>
     </annotationProcessing>
@@ -20,6 +21,7 @@
       <module name="how-tomcat-works" target="1.5" />
       <module name="smart-framework" target="1.8" />
       <module name="snail" target="1.8" />
+      <module name="springboot" target="1.8" />
       <module name="test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
