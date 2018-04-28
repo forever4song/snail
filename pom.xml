@@ -12,8 +12,7 @@
         <module>design-pattern</module>
         <module>smart-framework</module>
         <module>extra</module>
-        <module>test</module>
-        <module>test</module>
+        <module>springboot</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

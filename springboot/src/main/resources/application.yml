@@ -65,6 +65,8 @@ spring:
 logging:
   level:
     root: info
-  file: myapp.log
+  file:
+    max-size: 1gb
+    max-history: 0
 
 

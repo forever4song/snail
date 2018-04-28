@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(basePackages = "cn.foreversong.springboot.mybatis")
+@MapperScan(basePackages = "cn.foreversong.snail.springboot.mybatis")
 public class SpringbootApplication {
 
     public static void main(String[] args) {
